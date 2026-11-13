@@ -1,0 +1,75 @@
+
+{
+  "info": {
+    "name": "JSON Dataset Management API",
+    "description": "API requests for creating, retrieving, grouping and sorting JSON datasets.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080"
+    }
+  ],
+  "item": [
+    {
+      "name": "Create Dataset",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"datasetName\": \"products\",\n  \"records\": [\n    { \"name\": \"Laptop\", \"category\": \"Electronics\", \"price\": 50000 },\n    { \"name\": \"Phone\", \"category\": \"Electronics\", \"price\": 20000 },\n    { \"name\": \"Chair\", \"category\": \"Furniture\", \"price\": 5000 }\n  ]\n}"
+        },
+        "url": "{{baseUrl}}/api/datasets"
+      }
+    },
+    {
+      "name": "Get All Dataset Records",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/datasets/products"
+      }
+    },
+    {
+      "name": "Group Records By Category",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/datasets/products?groupBy=category"
+      }
+    },
+    {
+      "name": "Sort Records Ascending",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/datasets/products?sortBy=price&sortOrder=ASC"
+      }
+    },
+    {
+      "name": "Sort Records Descending",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/datasets/products?sortBy=price&sortOrder=DESC"
+      }
+    },
+    {
+      "name": "Combined Grouping And Sorting",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/datasets/products?groupBy=category&sortBy=price&sortOrder=DESC"
+      }
+    },
+    {
+      "name": "Invalid Dataset Request",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/datasets/unknown"
+      }
+    }
+  ]
+}
