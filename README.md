@@ -1,3 +1,8 @@
+# Publicly deployed API URL:
+https://json-dataset-api-dw5v.onrender.com/
+
+# Swagger UI URL:
+https://json-dataset-api-dw5v.onrender.com/swagger-ui/index.html
 
 # JSON Dataset Management & Query API
 
