@@ -198,6 +198,3 @@ The test suite covers service operations, controller endpoints, grouping, sortin
 - Authentication and authorization.
 - Cloud deployment and CI/CD integration.
 
-## Author
-
-JSON Dataset Management & Query API
